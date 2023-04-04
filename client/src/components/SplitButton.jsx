@@ -1,7 +1,7 @@
 import * as React from 'react';
 import Button from '@mui/material/Button';
 import ButtonGroup from '@mui/material/ButtonGroup';
-import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
+import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import ClickAwayListener from '@mui/material/ClickAwayListener';
 import Grow from '@mui/material/Grow';
 import Paper from '@mui/material/Paper';
@@ -9,12 +9,12 @@ import Popper from '@mui/material/Popper';
 import MenuItem from '@mui/material/MenuItem';
 import MenuList from '@mui/material/MenuList';
 
-const options = ['Create a merge commit', 'Squash and merge', 'Rebase and merge'];
+const options = ['User Login', 'Enterprise Login'];
 
 export default function SplitButton() {
   const [open, setOpen] = React.useState(false);
   const anchorRef = React.useRef(null);
-  const [selectedIndex, setSelectedIndex] = React.useState(1);
+  const [selectedIndex, setSelectedIndex] = React.useState(0);
 
   const handleClick = () => {
     console.info(`You clicked ${options[selectedIndex]}`);
@@ -49,7 +49,7 @@ export default function SplitButton() {
           aria-haspopup="menu"
           onClick={handleToggle}
         >
-          <ArrowDropDownIcon />
+          <ExpandMoreIcon />
         </Button>
       </ButtonGroup>
       <Popper
@@ -76,7 +76,6 @@ export default function SplitButton() {
                   {options.map((option, index) => (
                     <MenuItem
                       key={option}
-                      disabled={index === 2}
                       selected={index === selectedIndex}
                       onClick={(event) => handleMenuItemClick(event, index)}
                     >
