@@ -1,9 +1,8 @@
 import React, { useRef, useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Form, Button, FloatingLabel } from 'react-bootstrap';
 import { useStateContext } from '../contexts/ContextProvider';
 import shareVideo from '../assets/videos/videoplayback.mp4';
-import './Login.sass';
+import './LoginPage.sass';
 
 function LoginPage() {
   const listElement = useRef(null);
@@ -112,4 +111,4 @@ function LoginPage() {
   );
 }
 
-export default Login;
+export default LoginPage;

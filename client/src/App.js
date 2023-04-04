@@ -3,6 +3,8 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { useEffect } from'react';
 import StartPage from './pages/StartPage';
 import LoginPage from './pages/LoginPage';
+import { ContextProvider } from './contexts/ContextProvider';
+import { WZPContextProvider } from './contexts/WZPContextProvider';
 
 function App() {
 
@@ -23,12 +25,16 @@ function App() {
 
   return (
     <div className="App">
-      <BrowserRouter>
-        <Routes>
-          <Route path="/StartPage" element={(<StartPage />)} />
-          <Route path="/LoginPage" element={(<LoginPage />)} />
-        </Routes>
-      </BrowserRouter>
+      <ContextProvider>
+        <WZPContextProvider>
+          <BrowserRouter>
+            <Routes>
+              {/*<Route path="/StartPage" element={(<StartPage />)} />*/}
+              <Route path="/LoginPage" element={(<LoginPage />)} />
+            </Routes>
+          </BrowserRouter>
+        </WZPContextProvider>
+      </ContextProvider>
     </div>
   );
 }
