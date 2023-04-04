@@ -1,11 +1,13 @@
 import React, { useRef, useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useStateContext } from '../contexts/ContextProvider';
-import shareVideo from '../assets/videos/videoplayback.mp4';
+import dummy from '../assets/data/dummy.json';
+//import test from "../assets/videos/customer.mp4";
 import './LoginPage.sass';
 
-function LoginPage() {
+function LoginPage(props) {
   const listElement = useRef(null);
+  const { userType } = props;
   const { setLogin } = useStateContext();
   const navigate = useNavigate();
 
@@ -25,6 +27,32 @@ function LoginPage() {
       listElement.current.classList.add('bounceRight');
     };
 
+    const setRegisterText = () => {
+      dummy.user_config.forEach(item => {
+        if (item.user_type === userType) {
+          return item.register_text;
+        }
+      });
+      return dummy.user_config[0].register_text;
+    }
+
+    const setLoginText = () => {
+      dummy.user_config.forEach(item => {
+        if (item.user_type === userType) {
+          return item.login_text;
+        }
+      });
+      return dummy.user_config[0].login_text;
+    }
+
+    const setVideo = () => {
+      dummy.user_config.forEach(item => {
+        if (item.user_type === userType) {
+          return item.video_src;
+        }
+      });
+      return dummy.user_config[0].video_src;
+    }
     const sumbitLoginForm = () => {
       const loginEmail = document.querySelector('#login-email').value;
       const loginPassword = document.querySelector('#login-password').value;
@@ -44,7 +72,7 @@ function LoginPage() {
     <section className="user">
       <div className=" relative w-full h-full">
         <video
-          src={shareVideo}
+          src={require("../assets/videos/customer.mp4")}
           type="video/mp4"
           loop
           controls={false}
@@ -56,14 +84,14 @@ function LoginPage() {
       <div className="user_options-container">
         <div className="user_options-text">
           <div className="user_options-unregistered">
-            <h2 className="user_unregistered-title">Don not have an account?</h2>
-            <p className="user_unregistered-text">This product was developed by Wang Zhipeng to provide the most accurate and reliable stock investment advice.</p>
+            <h2 className="user_unregistered-title">Don't have an account ?</h2>
+            <p className="user_unregistered-text">{setRegisterText()}</p>
             <button className="user_unregistered-signup" id="signup-button" onClick={handleSignup} type="button">Sign up</button>
           </div>
 
           <div className="user_options-registered">
-            <h2 className="user_registered-title">Have an account?</h2>
-            <p className="user_registered-text">This product was developed by Wang Zhipeng to provide the most accurate and reliable stock investment advice.</p>
+            <h2 className="user_registered-title">Have an account ?</h2>
+            <p className="user_registered-text">{setLoginText()}</p>
             <button className="user_registered-login" id="login-button" onClick={handleLogin} type="button">Login</button>
           </div>
         </div>
@@ -74,7 +102,7 @@ function LoginPage() {
             <form className="forms_form">
               <fieldset className="forms_fieldset">
                 <div className="forms_field">
-                  <input type="email" placeholder="Email" className="forms_field-input" id="login-email" required autoFocus />
+                  <input placeholder="Email / User Name" className="forms_field-input" id="login-email" required autoFocus />
                 </div>
                 <div className="forms_field">
                   <input type="password" placeholder="Password" className="forms_field-input" id="login-password" required />
@@ -91,13 +119,13 @@ function LoginPage() {
             <form className="forms_form">
               <fieldset className="forms_fieldset">
                 <div className="forms_field">
-                  <input type="text" placeholder="User Name" className="forms_field-input" id="signup-username" required />
-                </div>
-                <div className="forms_field">
                   <input type="email" placeholder="Email" className="forms_field-input" id="signup-email" required />
                 </div>
                 <div className="forms_field">
                   <input type="password" placeholder="Password" className="forms_field-input" id="signup-password" required />
+                </div>
+                <div className="forms_field">
+                  <input type="password" placeholder="Confirm Password" className="forms_field-input" id="signup-password" required />
                 </div>
               </fieldset>
               <div className="forms_buttons">

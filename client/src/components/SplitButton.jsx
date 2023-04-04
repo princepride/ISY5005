@@ -8,8 +8,10 @@ import Paper from '@mui/material/Paper';
 import Popper from '@mui/material/Popper';
 import MenuItem from '@mui/material/MenuItem';
 import MenuList from '@mui/material/MenuList';
+import dummy from '../assets/data/dummy.json';
 
-const options = ['User Login', 'Enterprise Login'];
+//const options = ['User Login', 'Enterprise Login'];
+const options = dummy.user_config.map(item => (item.user_type + ' Login'))
 
 export default function SplitButton() {
   const [open, setOpen] = React.useState(false);
