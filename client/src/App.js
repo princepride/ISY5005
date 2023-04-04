@@ -5,7 +5,7 @@ import StartPage from './pages/StartPage';
 import LoginPage from './pages/LoginPage';
 import { ContextProvider } from './contexts/ContextProvider';
 import { WZPContextProvider } from './contexts/WZPContextProvider';
-import dummy from './assets/data/dummy.json'
+import config_data from './assets/data/config_data.json'
 
 function App() {
 
@@ -31,7 +31,7 @@ function App() {
           <BrowserRouter>
             <Routes>
               <Route path="/" element={(<StartPage />)} />
-              <Route path="/LoginPage" element={(<LoginPage userType={dummy.default_user_type}/>)} />
+              <Route path="/LoginPage" element={(<LoginPage userType={config_data.default_user_type}/>)} />
             </Routes>
           </BrowserRouter>
         </WZPContextProvider>

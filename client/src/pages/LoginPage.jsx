@@ -1,7 +1,7 @@
 import React, { useRef, useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useStateContext } from '../contexts/ContextProvider';
-import dummy from '../assets/data/dummy.json';
+import config_data from '../assets/data/config_data.json';
 //import test from "../assets/videos/customer.mp4";
 import './LoginPage.sass';
 
@@ -28,30 +28,30 @@ function LoginPage(props) {
     };
 
     const setRegisterText = () => {
-      dummy.user_config.forEach(item => {
+      config_data.user_config.forEach(item => {
         if (item.user_type === userType) {
           return item.register_text;
         }
       });
-      return dummy.user_config[0].register_text;
+      return config_data.user_config[0].register_text;
     }
 
     const setLoginText = () => {
-      dummy.user_config.forEach(item => {
+      config_data.user_config.forEach(item => {
         if (item.user_type === userType) {
           return item.login_text;
         }
       });
-      return dummy.user_config[0].login_text;
+      return config_data.user_config[0].login_text;
     }
 
     const setVideo = () => {
-      dummy.user_config.forEach(item => {
+      config_data.user_config.forEach(item => {
         if (item.user_type === userType) {
           return item.video_src;
         }
       });
-      return dummy.user_config[0].video_src;
+      return config_data.user_config[0].video_src;
     }
     const sumbitLoginForm = () => {
       const loginEmail = document.querySelector('#login-email').value;
