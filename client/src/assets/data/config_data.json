@@ -12,6 +12,12 @@
             "register_text":"To not miss out on any potential customers, register now.",
             "login_text":"Log in now and see how many customers you might have accidentally gained.",
             "video_src":"../assets/videos/enterprise.mp4"
+        },
+        {
+            "user_type":"Administrator",
+            "register_text":"Salute to the great Wang Zhipeng.",
+            "login_text":"Salute to the great Wang Zhipeng.",
+            "video_src":"../assets/videos/enterprise.mp4"
         }
     ]
 }
