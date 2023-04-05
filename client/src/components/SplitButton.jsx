@@ -9,6 +9,8 @@ import Popper from '@mui/material/Popper';
 import MenuItem from '@mui/material/MenuItem';
 import MenuList from '@mui/material/MenuList';
 import config_data from '../assets/data/config_data.json';
+import { Link } from 'react-router-dom';
+import { useStateContext } from '../contexts/ContextProvider';
 
 //const options = ['User Login', 'Enterprise Login'];
 const options = config_data.user_config.map(item => (item.user_type + ' Login'))
@@ -17,8 +19,10 @@ export default function SplitButton() {
   const [open, setOpen] = React.useState(false);
   const anchorRef = React.useRef(null);
   const [selectedIndex, setSelectedIndex] = React.useState(0);
+  const { setUserType } = useStateContext();
 
   const handleClick = () => {
+    setUserType(config_data.user_config[selectedIndex].user_type);
     console.info(`You clicked ${options[selectedIndex]}`);
   };
 
@@ -38,11 +42,14 @@ export default function SplitButton() {
 
     setOpen(false);
   };
-
+//
   return (
     <React.Fragment>
       <ButtonGroup variant="contained" ref={anchorRef} aria-label="split button">
+        <Link to="/LoginPage">
         <Button onClick={handleClick}>{options[selectedIndex]}</Button>
+        </Link>
+        {/*<Button onClick={handleClick}>{options[selectedIndex]}</Button>*/}
         <Button
           size="small"
           aria-controls={open ? 'split-button-menu' : undefined}

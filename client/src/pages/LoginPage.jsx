@@ -2,20 +2,23 @@ import React, { useRef, useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useStateContext } from '../contexts/ContextProvider';
 import config_data from '../assets/data/config_data.json';
-//import test from "../assets/videos/customer.mp4";
+import customer from "../assets/videos/customer.mp4";
+import enterprise from "../assets/videos/enterprise.mp4";
 import './LoginPage.sass';
 
-function LoginPage(props) {
+function LoginPage() {
   const listElement = useRef(null);
-  const { userType } = props;
-  const { setLogin } = useStateContext();
+  const { setLogin, userType } = useStateContext();
   const navigate = useNavigate();
+  const [registerText, setRegisterText] = useState(config_data.user_config[0].register_text);
+  const [loginText, setLoginText] = useState(config_data.user_config[0].login_text);
 
-  // const [loginEmail, setLoginEmail] = useState();
-  // const [loginPassword, setLoginPassword] = useState();
-  // const [signupUserName, setSignupUserName] = useState();
-  // const [signupEmail, setSignupEmail] = useState();
-  // const [signupPassword, setSignupPassword] = useState();
+  useEffect(() => {
+    console.log(userType);
+    setRegisterText(config_data.user_config.find(item => item.user_type === userType).register_text);
+    setLoginText(config_data.user_config.find(item => item.user_type === userType).login_text);
+  },[userType])
+
 
     const handleSignup = () => {
       listElement.current.classList.remove('bounceRight');
@@ -27,32 +30,6 @@ function LoginPage(props) {
       listElement.current.classList.add('bounceRight');
     };
 
-    const setRegisterText = () => {
-      config_data.user_config.forEach(item => {
-        if (item.user_type === userType) {
-          return item.register_text;
-        }
-      });
-      return config_data.user_config[0].register_text;
-    }
-
-    const setLoginText = () => {
-      config_data.user_config.forEach(item => {
-        if (item.user_type === userType) {
-          return item.login_text;
-        }
-      });
-      return config_data.user_config[0].login_text;
-    }
-
-    const setVideo = () => {
-      config_data.user_config.forEach(item => {
-        if (item.user_type === userType) {
-          return item.video_src;
-        }
-      });
-      return config_data.user_config[0].video_src;
-    }
     const sumbitLoginForm = () => {
       const loginEmail = document.querySelector('#login-email').value;
       const loginPassword = document.querySelector('#login-password').value;
@@ -72,7 +49,7 @@ function LoginPage(props) {
     <section className="user">
       <div className=" relative w-full h-full">
         <video
-          src={require("../assets/videos/customer.mp4")}
+          src={userType === 'Customer' ? customer : enterprise}
           type="video/mp4"
           loop
           controls={false}
@@ -85,13 +62,13 @@ function LoginPage(props) {
         <div className="user_options-text">
           <div className="user_options-unregistered">
             <h2 className="user_unregistered-title">Don't have an account ?</h2>
-            <p className="user_unregistered-text">{setRegisterText()}</p>
+            <p className="user_unregistered-text">{registerText}</p>
             <button className="user_unregistered-signup" id="signup-button" onClick={handleSignup} type="button">Sign up</button>
           </div>
 
           <div className="user_options-registered">
             <h2 className="user_registered-title">Have an account ?</h2>
-            <p className="user_registered-text">{setLoginText()}</p>
+            <p className="user_registered-text">{loginText}</p>
             <button className="user_registered-login" id="login-button" onClick={handleLogin} type="button">Login</button>
           </div>
         </div>

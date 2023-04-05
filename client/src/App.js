@@ -31,7 +31,7 @@ function App() {
           <BrowserRouter>
             <Routes>
               <Route path="/" element={(<StartPage />)} />
-              <Route path="/LoginPage" element={(<LoginPage userType={config_data.default_user_type}/>)} />
+              <Route path="/LoginPage" element={(<LoginPage/>)} />
             </Routes>
           </BrowserRouter>
         </WZPContextProvider>
