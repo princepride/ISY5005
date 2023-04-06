@@ -11,22 +11,22 @@ function RoutePage() {
     const { userType } = useStateContext();
     useEffect(() => {
         window.wzp = {
-        route: function (path) {
-            window.location.href = 'http://localhost:3000/' + path;
-        },
-        click: function (selector) {
-            document.querySelector(selector).click();
-        },
-        input: function (selector, text) {
-            document.querySelector(selector).value = text;
-        },
-        print: () => {
-            console.log(userType);
-        }
+            route: function (path) {
+                window.location.href = 'http://localhost:3000/' + path;
+            },
+            click: function (selector) {
+                document.querySelector(selector).click();
+            },
+            input: function (selector, text) {
+                document.querySelector(selector).value = text;
+            },
+            print: () => {
+                console.log(userType);
+            }
         };
-  }, [userType]);
+    }, [userType]);
 
-  return (
+    return (
     <BrowserRouter>
         <Routes>
             <Route path="/" element={(<StartPage />)} />
@@ -35,7 +35,7 @@ function RoutePage() {
             <Route path="/test" element={(<TestPage />)} />
         </Routes>
     </BrowserRouter>
-  );
+    );
 }
 
 export default RoutePage;
