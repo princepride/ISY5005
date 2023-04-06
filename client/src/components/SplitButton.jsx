@@ -46,7 +46,7 @@ export default function SplitButton() {
   return (
     <React.Fragment>
       <ButtonGroup variant="contained" ref={anchorRef} aria-label="split button">
-        <Link to="/LoginPage">
+        <Link to="/login">
         <Button onClick={handleClick}>{options[selectedIndex]}</Button>
         </Link>
         {/*<Button onClick={handleClick}>{options[selectedIndex]}</Button>*/}

@@ -3,6 +3,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { useEffect } from'react';
 import StartPage from './pages/StartPage';
 import LoginPage from './pages/LoginPage';
+import FormPage from './pages/FormPage';
 import { ContextProvider } from './contexts/ContextProvider';
 import { WZPContextProvider } from './contexts/WZPContextProvider';
 import config_data from './assets/data/config_data.json'
@@ -31,7 +32,8 @@ function App() {
           <BrowserRouter>
             <Routes>
               <Route path="/" element={(<StartPage />)} />
-              <Route path="/LoginPage" element={(<LoginPage/>)} />
+              <Route path="/login" element={(<LoginPage/>)} />
+              <Route path="/form" element={(<FormPage />)} />
             </Routes>
           </BrowserRouter>
         </WZPContextProvider>
