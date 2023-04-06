@@ -4,6 +4,7 @@ import { useEffect } from'react';
 import StartPage from './pages/StartPage';
 import LoginPage from './pages/LoginPage';
 import FormPage from './pages/FormPage';
+import TestPage from './pages/TestPage';
 import { ContextProvider } from './contexts/ContextProvider';
 import { WZPContextProvider } from './contexts/WZPContextProvider';
 import config_data from './assets/data/config_data.json'
@@ -34,6 +35,7 @@ function App() {
               <Route path="/" element={(<StartPage />)} />
               <Route path="/login" element={(<LoginPage/>)} />
               <Route path="/form" element={(<FormPage />)} />
+              <Route path="/test" element={(<TestPage />)} />
             </Routes>
           </BrowserRouter>
         </WZPContextProvider>
