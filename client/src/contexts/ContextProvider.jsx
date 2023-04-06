@@ -7,9 +7,13 @@ export const ContextProvider = ({ children }) => {
     const [isLogin, setLogin] = useState(false);
     const [userName, setUserName] = useState('');
     const [userType, setUserType] = useState(config_data.default_user_type);
+    const [dialogVisible, setDialogVisible] = useState(false);
 
     return (
-        <StateContext.Provider value={{ isLogin, setLogin, userName, setUserName, userType, setUserType }}>
+        <StateContext.Provider value={{ isLogin, 
+        setLogin, userName, setUserName, 
+        userType, setUserType, dialogVisible,
+         setDialogVisible }}>
             {children}
         </StateContext.Provider>
     );

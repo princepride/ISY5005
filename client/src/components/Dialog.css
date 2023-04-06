@@ -1,0 +1,12 @@
+.slide-in-right {
+    animation: slide-in-right 0.5s ease-out forwards;
+  }
+  
+  @keyframes slide-in-right {
+    from {
+      right: -100%;
+    }
+    to {
+      right: 0;
+    }
+  }
