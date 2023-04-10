@@ -1,8 +1,14 @@
-import React from 'react'
+import React, {useEffect} from 'react'
 import Chat from '../components/Chat'
 import Dialog from '../components/Dialog'
+import {login} from '../utils/connectSQLite'
 
 export default function TestPage() {
+
+  useEffect(() => {
+    login('Customer', '123', '123')
+  }, [])
+
   return (
     //<h1 className="text-3xl font-bold underline">
     //  Hello world!

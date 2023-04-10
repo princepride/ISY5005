@@ -2,14 +2,14 @@ import Axios from 'axios';
 import config_axios from '../assets/data/config_axios.json'
 
 
-function login(userType, email, password) {
-    const url = server_host + 'api/login';
+const login = (userType, email, password) => {
+    const url = config_axios.server_host + 'api/login';
     const data = {
       userType: userType,
       email: email,
       password: password
     };
-    return axios.post(url, data)
+    return Axios.post(url, data)
       .then(response => {
         return response.data;
       })
@@ -18,14 +18,15 @@ function login(userType, email, password) {
       });
   }
 
-  function register(userType, email, password) {
-    const url = server_host + 'api/register';
+  const register = (userType, email, password) => 
+  {
+    const url = config_axios.server_host + 'api/register';
     const data = {
       userType: userType,
       email: email,
       password: password
     };
-    return axios.post(url, data)
+    return Axios.post(url, data)
       .then(response => {
         return response.data;
       })
@@ -33,3 +34,5 @@ function login(userType, email, password) {
         throw new Error(error.message);
       });
   }
+
+  export {login, register}
