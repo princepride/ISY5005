@@ -49,10 +49,7 @@ const login = (userType, email, password) =>
     };
     return Axios.post(url, data)
       .then(response => {
-<<<<<<< HEAD
         console.log(response.data);
-=======
->>>>>>> 3e5285f22257238d2c03958f5a8dc19779e92e00
         return response.data;
       })
       .catch(error => {
@@ -65,7 +62,6 @@ const login = (userType, email, password) =>
     const url = config_axios.server_host + 'api/update_password';
     const data = {
       userType: userType,
-<<<<<<< HEAD
       old_password: old_password,
       new_password: new_password,
       email: email
@@ -73,14 +69,6 @@ const login = (userType, email, password) =>
     return Axios.post(url, data)
       .then(response => {
         console.log(response.data);
-=======
-      email: email,
-      old_password: old_password,
-      new_password: new_password
-    };
-    return Axios.post(url, data)
-      .then(response => {
->>>>>>> 3e5285f22257238d2c03958f5a8dc19779e92e00
         return response.data;
       })
       .catch(error => {
@@ -88,8 +76,4 @@ const login = (userType, email, password) =>
       });
   }
 
-<<<<<<< HEAD
-  export {login, register,update_email ,update_password}
-=======
   export {login, register,update_email,update_password}
->>>>>>> 3e5285f22257238d2c03958f5a8dc19779e92e00

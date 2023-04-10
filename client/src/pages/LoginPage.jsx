@@ -31,35 +31,45 @@ function LoginPage() {
       listElement.current.classList.add('bounceRight');
     };
 
-    const sumbitLoginForm = () => {
+    const sumbitLoginForm = (event) => {
+      event.preventDefault();
       const loginEmail = document.querySelector('#login-email').value;
       const loginPassword = document.querySelector('#login-password').value;
-      // setLogin(true);
-      console.log("hello")
-      login(userType, loginEmail, loginPassword).then(
-        response => {
-          console.log(response)
-          if(response.status === '100') {
-            setLogin(true);
-            setUserName(response.userName)
-            setUserEmail(response.userEmail)
-            // navigate('/form');
-          }
-          else {
-            setLogin(false);
-            console.log(response.message)
-          }
+      login(userType, loginEmail, loginPassword).then(response => {
+        if(response.status === '100') {
+          setLogin(true);
+          setUserName(response.userName)
+          setUserEmail(response.userEmail)
+          navigate('/form');
         }
-      );
+        else {
+          setLogin(false);
+          console.log(response.message)
+        }
+      })
+      .catch(error => {
+        console.error(error);
+        // 处理错误
+      });
       
     };
 
     const sumbitSignupForm = () => {
-      const signupUsername = document.querySelector('#signup-username').value;
       const signupEmail = document.querySelector('#signup-email').value;
       const signupPassword = document.querySelector('#signup-password').value;
-      setLogin(true);
-      navigate('/');
+      register(userType, signupEmail, signupPassword).then(response => {
+        if(response.status === '200') {
+          document.querySelector('#login-button').click();
+        }
+        else {
+          setLogin(false);
+          console.log(response.message)
+        }
+      })
+      .catch(error => {
+        console.error(error);
+        // 处理错误
+      });
     };
 
   return (
@@ -104,6 +114,7 @@ function LoginPage() {
               </fieldset>
               <div className="forms_buttons">
                 <button type="button" className="forms_buttons-forgot" id="reset-password">Forgot password?</button>
+                {/*<button type="submit" className="forms_buttons-action" id="submit-login-form" onClick={sumbitLoginForm}>Log In</button>*/}
                 <input type="submit" value="Log In" className="forms_buttons-action" id="submit-login-form" onClick={sumbitLoginForm} />
               </div>
             </form>

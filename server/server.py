@@ -45,13 +45,13 @@ def register():
     res = cursor.execute("SELECT * FROM login_info WHERE email = ?",(email,))
     data = res.fetchall()
     if len(data) != 0:
-        return jsonify({'state':'003', 'message':'registration failed, user already exists', 'userName':data[0][0], 'userEmail':data[0][1]})
+        return jsonify({'status':'003', 'message':'registration failed, user already exists', 'userName':data[0][0], 'userEmail':data[0][1]})
     else:
         cursor.execute("INSERT INTO login_info (name, email, password) VALUES (?, ?, ?)", (email,email, password))
         conn.commit()
         cursor.close()
         conn.close()
-        return jsonify({'state':'200','message':'registration success', 'userName':userType, 'userEmail':email})
+        return jsonify({'status':'200','message':'registration success', 'userName':userType, 'userEmail':email})
 # update email api
 @app.route("/api/update_email",methods = ["POST"])
 def update_email():
@@ -73,21 +73,21 @@ def update_email():
     if len(data) > 0:
         cursor.close()
         conn.close()
-        return jsonify({'state': '001', 'message': 'Email already registered, please use a different email', 'userName': '', 'userEmail': ''})
+        return jsonify({'status': '001', 'message': 'Email already registered, please use a different email', 'userName': '', 'userEmail': ''})
 
     # Update email
     res = cursor.execute("SELECT * FROM login_info WHERE email = ?", (old_email,))
     data = res.fetchall()
     if len(data) == 0:
-        return jsonify({'state': '000', 'message': 'Update failed, no such user', 'userName': '', 'userEmail': ''})
+        return jsonify({'status': '000', 'message': 'Update failed, no such user', 'userName': '', 'userEmail': ''})
     elif len(data) >= 2:
-        return jsonify({'state': '002', 'message': 'Update failed, system error, multiple users using the same email', 'userName': '', 'userEmail': ''})
+        return jsonify({'status': '002', 'message': 'Update failed, system error, multiple users using the same email', 'userName': '', 'userEmail': ''})
     elif data[0][2] != password:
-        return jsonify({'state': '003', 'message': 'Update failed, wrong password', 'userName': '', 'userEmail': ''})
+        return jsonify({'status': '003', 'message': 'Update failed, wrong password', 'userName': '', 'userEmail': ''})
     else:
         cursor.execute("UPDATE login_info SET email = ? WHERE email = ?", (new_email, old_email))
         conn.commit()
-        return jsonify({'state': '100', 'message': 'Update success', 'userName': data[0][0], 'userEmail': new_email})
+        return jsonify({'status': '100', 'message': 'Update success', 'userName': data[0][0], 'userEmail': new_email})
 
 # update password api
 @app.route("/api/update_password",methods = ["POST"])
