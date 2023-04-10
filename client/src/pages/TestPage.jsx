@@ -1,10 +1,14 @@
 import React, {useEffect} from 'react'
 import Chat from '../components/Chat'
 import Dialog from '../components/Dialog'
+<<<<<<< HEAD
 import {login} from '../utils/connectSQLite'
 import {register} from '../utils/connectSQLite'
 import {update_email} from '../utils/connectSQLite'
 import {update_password} from '../utils/connectSQLite'
+=======
+import {login, register, update_email, update_password} from '../utils/connectSQLite'
+>>>>>>> 3e5285f22257238d2c03958f5a8dc19779e92e00
 
 export default function TestPage() {
 

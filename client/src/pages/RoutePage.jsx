@@ -8,7 +8,7 @@ import { useStateContext } from '../contexts/ContextProvider';
 import config_data from '../assets/data/config_data.json'
 
 function RoutePage() {
-    const { userType } = useStateContext();
+    const { userType, isLogin } = useStateContext();
     useEffect(() => {
         window.wzp = {
             route: function (path) {
@@ -31,7 +31,7 @@ function RoutePage() {
         <Routes>
             <Route path="/" element={(<StartPage />)} />
             <Route path="/login" element={(<LoginPage/>)} />
-            <Route path="/form" element={(<FormPage />)} />
+            {isLogin && <Route path="/form" element={(<FormPage />)} />}
             <Route path="/test" element={(<TestPage />)} />
         </Routes>
     </BrowserRouter>
