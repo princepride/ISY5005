@@ -2,12 +2,18 @@ import React, {useEffect} from 'react'
 import Chat from '../components/Chat'
 import Dialog from '../components/Dialog'
 import {login} from '../utils/connectSQLite'
+import {register} from '../utils/connectSQLite'
+import {update_email} from '../utils/connectSQLite'
+import {update_password} from '../utils/connectSQLite'
 
 export default function TestPage() {
 
  useEffect(() => {
-    login('Customer', '123', '123')
-    login('Customer', '123', '1234')
+    // register('Customer', '456', '456')
+    update_email('Customer', '456', '789','456')
+    // register('Customer', '123', '123')
+    // update_password('Customer', '123', '1234','123456@qq.com')
+    // login('Customer', '123', '123')
   }, [])
 
   return (
