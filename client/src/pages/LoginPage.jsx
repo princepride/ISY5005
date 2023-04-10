@@ -4,11 +4,12 @@ import { useStateContext } from '../contexts/ContextProvider';
 import config_data from '../assets/data/config_data.json';
 import customer from "../assets/videos/customer.mp4";
 import enterprise from "../assets/videos/enterprise.mp4";
+import {login, register} from '../utils/connectSQLite';
 import './LoginPage.sass';
 
 function LoginPage() {
   const listElement = useRef(null);
-  const { setLogin, userType } = useStateContext();
+  const { setLogin, userType, setUserName, setUserEmail } = useStateContext();
   const navigate = useNavigate();
   const [registerText, setRegisterText] = useState(config_data.user_config[0].register_text);
   const [loginText, setLoginText] = useState(config_data.user_config[0].login_text);
@@ -33,8 +34,24 @@ function LoginPage() {
     const sumbitLoginForm = () => {
       const loginEmail = document.querySelector('#login-email').value;
       const loginPassword = document.querySelector('#login-password').value;
-      setLogin(true);
-      navigate('/');
+      // setLogin(true);
+      console.log("hello")
+      login(userType, loginEmail, loginPassword).then(
+        response => {
+          console.log(response)
+          if(response.status === '100') {
+            setLogin(true);
+            setUserName(response.userName)
+            setUserEmail(response.userEmail)
+            // navigate('/form');
+          }
+          else {
+            setLogin(false);
+            console.log(response.message)
+          }
+        }
+      );
+      
     };
 
     const sumbitSignupForm = () => {

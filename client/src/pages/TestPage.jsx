@@ -1,7 +1,7 @@
 import React, {useEffect} from 'react'
 import Chat from '../components/Chat'
 import Dialog from '../components/Dialog'
-import {login} from '../utils/connectSQLite'
+import {login, register, update_email, update_password} from '../utils/connectSQLite'
 
 export default function TestPage() {
 

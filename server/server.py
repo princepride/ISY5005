@@ -21,13 +21,13 @@ def login():
     conn.close()
     print(data)
     if len(data) == 0:
-        return jsonify({'state':'000', 'message':'login failed, there is no such user', 'userName':'', 'userEmail':''})
+        return jsonify({'status':'000', 'message':'login failed, there is no such user', 'userName':'', 'userEmail':''})
     elif len(data) >= 2:
-        return jsonify({'state':'001', 'message':'login failed, system error, there are multiple users using the same email', 'userName':'', 'userEmail':''})
+        return jsonify({'status':'001', 'message':'login failed, system error, there are multiple users using the same email', 'userName':'', 'userEmail':''})
     elif data[0][2] != password:
-        return jsonify({'state':'002','message':'login failed, wrong password', 'userName':'', 'userEmail':''})
+        return jsonify({'status':'002','message':'login failed, wrong password', 'userName':'', 'userEmail':''})
     else:
-        return jsonify({'state':'100','message':'login success', 'userName':data[0][0], 'userEmail':data[0][1]})
+        return jsonify({'status':'100','message':'login success', 'userName':data[0][0], 'userEmail':data[0][1]})
 
 # register api
 @app.route("/api/register",methods = ["POST"])
@@ -51,8 +51,8 @@ def update_email():
     # check if the new email is already registered !
 
 # update password api
-@app.route("/api/update_email",methods = ["POST"])
-def update_email():
+@app.route("/api/update_password",methods = ["POST"])
+def update_password():
     req = request.get_json(silent=False, force=True)
     userType = req["userType"]
     old_password = req["old_password"]
