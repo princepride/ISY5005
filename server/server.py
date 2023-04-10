@@ -36,9 +36,6 @@ def register():
     userType = req["userType"]
     email = req["email"]
     password = req["password"]
-    # 1. check if user is already registered
-    # 2. if user is already registered, return new error type
-    # 3. else, insert new user information
     conn = sqlite3.connect('./database/'+str(userType)+'.db')
     print('Connected to the database '+str(userType)+'.db')
     cursor = conn.cursor()
