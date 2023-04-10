@@ -5,8 +5,9 @@ import {login} from '../utils/connectSQLite'
 
 export default function TestPage() {
 
-  useEffect(() => {
+ useEffect(() => {
     login('Customer', '123', '123')
+    login('Customer', '123', '1234')
   }, [])
 
   return (

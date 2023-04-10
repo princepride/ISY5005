@@ -12,14 +12,15 @@ def login():
     userType = req["userType"].lower()
     email = req["email"]
     password = req["password"]
-    print(str(userType))
     conn = sqlite3.connect('./database/'+str(userType)+'.db')
+    # conn = sqlite3.connect(r'./database/customer.db')
     print('Connected to the database '+str(userType)+'.db')
     cursor = conn.cursor()
-    res = cursor.execute("SELECT * FROM login_info WHERE email = ? AND password = ?",(email, password))
+    res = cursor.execute("SELECT * FROM login_info WHERE email = ? AND password = ?",(email, password,))
     data = res.fetchall()
     cursor.close()
     conn.close()
+    print(data)
     if len(data) == 0:
         return jsonify({'result':0})
     else:

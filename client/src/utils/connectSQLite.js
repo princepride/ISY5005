@@ -11,6 +11,7 @@ const login = (userType, email, password) => {
     };
     return Axios.post(url, data)
       .then(response => {
+        console.log(response.data);
         return response.data;
       })
       .catch(error => {
