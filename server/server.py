@@ -16,15 +16,19 @@ def login():
     # conn = sqlite3.connect(r'./database/customer.db')
     print('Connected to the database '+str(userType)+'.db')
     cursor = conn.cursor()
-    res = cursor.execute("SELECT * FROM login_info WHERE email = ? AND password = ?",(email, password,))
+    res = cursor.execute("SELECT * FROM login_info WHERE email = ?",(email,))
     data = res.fetchall()
     cursor.close()
     conn.close()
     print(data)
     if len(data) == 0:
-        return jsonify({'result':0})
+        return jsonify({'state':'000', 'message':'login failed, there is no such user'})
+    elif len(data) >= 2:
+        return jsonify({'state':'001', 'message':'login failed, system error, there are multiple users using the same email'})
+    elif data[0][2] != password:
+        return jsonify({'state':'002','message':'login failed, wrong password'})
     else:
-        return jsonify({'result':1})
+        return jsonify({'state':'100','message':'login success'})
 
 @app.route("/api/register",methods = ["POST"])
 def register():
