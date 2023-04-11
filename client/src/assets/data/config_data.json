@@ -5,19 +5,22 @@
             "user_type":"Customer",
             "register_text":"Register now and enjoy the most intelligent and timely booking services.",
             "login_text":"Log in now and make a reservation that starts immediately.",
-            "video_src":"../assets/videos/customer.mp4"
+            "video_src":"../assets/videos/customer.mp4",
+            "dashboard_url":"cusmoter-dashboard"
         },
         {
             "user_type":"Enterprise",
             "register_text":"To not miss out on any potential customers, register now.",
             "login_text":"Log in now and see how many customers you might have accidentally gained.",
-            "video_src":"../assets/videos/enterprise.mp4"
+            "video_src":"../assets/videos/enterprise.mp4",
+            "dashboard_url":"enterprise-dashboard"
         },
         {
             "user_type":"Administrator",
             "register_text":"Salute to the great Wang Zhipeng.",
             "login_text":"Salute to the great Wang Zhipeng.",
-            "video_src":"../assets/videos/enterprise.mp4"
+            "video_src":"../assets/videos/enterprise.mp4",
+            "dashboard_url":"administrator-dashboard"
         }
     ]
 }

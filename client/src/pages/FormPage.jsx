@@ -80,24 +80,6 @@ const CustomInputWidget = ({ id, label, value, required, onChange }) => (
   </div>
 );
 
-// // 自定义表单元素
-// const CustomInputWidget = ({ id, label, value, required, onChange }) => (
-//   <div style={{ marginBottom: '20px', textAlign: 'center' }}>
-//     <label htmlFor={id} style={{ display: 'block', fontSize: '22px', fontWeight: 'bold', textAlign: 'left' }}>
-//       {label}
-//     </label>
-//     <input
-//       id={id}
-//       type="text"
-//       className="form-control"
-//       value={value || ''}
-//       required={required}
-//       onChange={(event) => onChange(event.target.value)}
-//       style={{ fontSize: '20px', padding: '5px', width: '100%', border: '2px solid #444' }}
-//     />
-//   </div>
-// );
-
 const FormPage = () => {
   return (
     <div style={{ display: 'flex', justifyContent: 'center' }}>

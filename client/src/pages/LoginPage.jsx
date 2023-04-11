@@ -13,11 +13,13 @@ function LoginPage() {
   const navigate = useNavigate();
   const [registerText, setRegisterText] = useState(config_data.user_config[0].register_text);
   const [loginText, setLoginText] = useState(config_data.user_config[0].login_text);
+  const [dashboardUrl, setDashboardUrl] = useState(config_data.user_config[0].dashboard_url);
 
   useEffect(() => {
     console.log(userType);
     setRegisterText(config_data.user_config.find(item => item.user_type === userType).register_text);
     setLoginText(config_data.user_config.find(item => item.user_type === userType).login_text);
+    setDashboardUrl(config_data.user_config.find(item => item.user_type === userType).dashboard_url);
   },[userType])
 
 
@@ -35,22 +37,24 @@ function LoginPage() {
       event.preventDefault();
       const loginEmail = document.querySelector('#login-email').value;
       const loginPassword = document.querySelector('#login-password').value;
-      login(userType, loginEmail, loginPassword).then(response => {
-        if(response.status === '100') {
-          setLogin(true);
-          setUserName(response.userName)
-          setUserEmail(response.userEmail)
-          navigate('/form');
-        }
-        else {
-          setLogin(false);
-          console.log(response.message)
-        }
-      })
-      .catch(error => {
-        console.error(error);
-        // 处理错误
-      });
+      setLogin(true);
+      navigate('/'+dashboardUrl);
+      //login(userType, loginEmail, loginPassword).then(response => {
+      //  if(response.status === '100') {
+      //    setLogin(true);
+      //    setUserName(response.userName)
+      //    setUserEmail(response.userEmail)
+      //    navigate('/'+dashboardUrl);
+      //  }
+      //  else {
+      //    setLogin(false);
+      //    console.log(response.message)
+      //  }
+      //})
+      //.catch(error => {
+      //  console.error(error);
+      //  // 处理错误
+      //});
       
     };
 
