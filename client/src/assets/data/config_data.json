@@ -6,14 +6,14 @@
             "register_text":"Register now and enjoy the most intelligent and timely booking services.",
             "login_text":"Log in now and make a reservation that starts immediately.",
             "video_src":"../assets/videos/customer.mp4",
-            "dashboard_url":"cusmoter-dashboard"
+            "dashboard_url":"cus-dashboard"
         },
         {
             "user_type":"Enterprise",
             "register_text":"To not miss out on any potential customers, register now.",
             "login_text":"Log in now and see how many customers you might have accidentally gained.",
             "video_src":"../assets/videos/enterprise.mp4",
-            "dashboard_url":"enterprise-dashboard"
+            "dashboard_url":"ent-dashboard"
         },
         {
             "user_type":"Administrator",

@@ -4,8 +4,10 @@ import StartPage from './StartPage';
 import LoginPage from './LoginPage';
 import FormPage from './FormPage';
 import TestPage from './TestPage';
-import CusmoterDashboard from './CusmoterDashboard';
-import EnterpriseDashboard from './EnterpriseDashboard';
+import CusDashboardPage from './CusDashboardPage';
+import EntDashboardPage from './EntDashboardPage';
+import CusAccountPage from './CusAccountPage';
+import CusHistoryPage from './CusHistoryPage';
 import { useStateContext } from '../contexts/ContextProvider';
 import config_data from '../assets/data/config_data.json'
 
@@ -34,8 +36,10 @@ function RoutePage() {
             <Route path="/" element={(<StartPage />)} />
             <Route path="/login" element={(<LoginPage/>)} />
             {isLogin && <Route path="/form" element={(<FormPage />)} />}
-            {isLogin && <Route path="/cusmoter-dashboard" element={(<CusmoterDashboard />)} />}
-            {isLogin && <Route path="/enterprise-dashboard" element={(<EnterpriseDashboard />)} />}
+            {isLogin && <Route path="/cus-dashboard" element={(<CusDashboardPage />)} />}
+            {isLogin && <Route path="/cus-account" element={(<CusAccountPage />)} />}
+            {isLogin && <Route path="/cus-history" element={(<CusHistoryPage />)} />}
+            {isLogin && <Route path="/ent-dashboard" element={(<EntDashboardPage />)} />}
             <Route path="/test" element={(<TestPage />)} />
         </Routes>
     </BrowserRouter>
