@@ -1,0 +1,48 @@
+{
+    "title": "Restaurant Booking",
+    "type": "object",
+    "required" : [
+        "name",
+        "phoneNumber",
+        "beginTime"
+    ],
+    "properties": {
+        "name": {
+            "type": "string",
+            "title": "Name"
+        },
+        "phoneNumber": {
+            "type": "string",
+            "title": "Phone Number"
+        },
+        "beginTime": {
+            "type": "string",
+            "title": "Begin Time",
+            "format": "time"
+        },
+        "peopleNumber": {
+            "type": "array",
+            "title": "People Number",
+            "items": {
+                "type": "string",
+                "enum": [
+                "1",
+                "2",
+                "3",
+                "4",
+                "5",
+                "6",
+                "7",
+                "8"
+                ]
+            },
+            "uniqueItems": true
+        },
+        "note": {
+            "type": "string",
+            "title": "Note",
+            "format": "textarea"
+        }
+    }
+
+  }
