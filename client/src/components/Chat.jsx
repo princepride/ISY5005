@@ -4,6 +4,7 @@ import Button from '@mui/material/Button';
 import Paper from '@mui/material/Paper';
 import TextField from '@mui/material/TextField';
 import SendIcon from '@mui/icons-material/Send';
+import { send_message } from '../utils/connectSQLite.js';
 
 const ChatButton = styled(Button)(({ theme }) => ({
   position: 'fixed',
@@ -58,8 +59,21 @@ const Chat = () => {
 
   const handleSendMessage = () => {
     if (newMessage.trim() !== '') {
-      setMessages([...messages, { text: newMessage, sender: 'user' }]);
+      setMessages((prevMessages) => [
+        ...prevMessages,
+        { text: newMessage, sender: 'user' },
+      ]);
       setNewMessage('');
+      send_message(newMessage)
+        .then((response) => {
+          setMessages((prevMessages) => [
+            ...prevMessages,
+            { text: response.message, sender: 'server' },
+          ]);
+        })
+        .catch((error) => {
+          console.log(error);
+        });
     }
   };
 
@@ -96,6 +110,9 @@ const Chat = () => {
                     padding: 8,
                     borderRadius: 16,
                     maxWidth: '70%',
+                    fontSize: '16px',
+                    wordWrap: 'break-word',
+                    lineHeight: '1em',
                     backgroundColor:
                       message.sender === 'user' ? '#7fbfff' : '#f0f0f0',
                   }}

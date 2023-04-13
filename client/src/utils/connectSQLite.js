@@ -90,4 +90,4 @@ const login = (userType, email, password) =>
       });
   }
 
-  export {login, register,update_email,update_password}
+  export {login, register, update_email, update_password, send_message}
