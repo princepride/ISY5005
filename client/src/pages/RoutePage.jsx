@@ -2,7 +2,6 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { useEffect } from'react';
 import StartPage from './StartPage';
 import LoginPage from './LoginPage';
-import FormPage from './FormPage';
 import TestPage from './TestPage';
 import CusDashboardPage from './CusDashboardPage';
 import EntDashboardPage from './EntDashboardPage';
@@ -35,7 +34,7 @@ function RoutePage() {
         <Routes>
             <Route path="/" element={(<StartPage />)} />
             <Route path="/login" element={(<LoginPage/>)} />
-            {isLogin && <Route path="/form" element={(<FormPage />)} />}
+            {/*{isLogin && <Route path="/form" element={(<FormPage />)} />}*/}
             {isLogin && <Route path="/cus-dashboard" element={(<CusDashboardPage />)} />}
             {isLogin && <Route path="/cus-account" element={(<CusAccountPage />)} />}
             {isLogin && <Route path="/cus-history" element={(<CusHistoryPage />)} />}
