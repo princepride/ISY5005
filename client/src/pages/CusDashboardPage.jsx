@@ -5,6 +5,7 @@ import { Routes, Route, Link, Outlet } from 'react-router-dom';
 import CusHomePage from './CusHomePage';
 import CusHistoryPage from './CusHistoryPage';
 import CusProfilePage from './CusProfilePage';
+import CusFormPage from './CusFormPage';
 
 const MainContainer = styled(Box)`
   display: flex;
@@ -59,6 +60,7 @@ const CusDashboardPage = () => {
         <Route path="" element={(<CusHomePage />)} />
         <Route path="/history" element={(<CusHistoryPage/>)} />
         <Route path="/profile" element={(<CusProfilePage />)} />
+        <Route path="/form" element={(<CusFormPage />)} />
       </Routes>
       </ContentContainer>
     </MainContainer>
