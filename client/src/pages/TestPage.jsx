@@ -1,20 +1,25 @@
 import React, {useEffect} from 'react'
 import Chat from '../components/Chat'
-import CusProfilePage from '../pages/CusProfilePage';
 import {login, register, update_email, update_password} from '../utils/connectSQLite'
 import CreateForm from '../components/CreateForm'
+import BusinessCard from '../components/BusinessCard'
 import test from './test.json'
+import image from '../assets/images/img1.jpg'
 
 export default function TestPage() {
 
  useEffect(() => {
-    update_email('Customer', '456', '789','456')
   }, [])
 
   return (
     <div>
         <Chat />
-        <CusProfilePage />
+        <BusinessCard 
+        label={"sex"} 
+        companyName={"哥哥快操我"} 
+        address={"190 Changi Rd, #01-01A"} 
+        image={image} 
+        information={"新加坡最棒的妓院"}/>
         {/*<CreateForm jsonData={test}/>*/}
     </div>
   )

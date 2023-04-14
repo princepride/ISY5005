@@ -39,7 +39,7 @@ const CusDashboardPage = () => {
     <MainContainer>
       <NavigationContainer>
         <NavigationList>
-          <NavigationItem component={Link} to="/cus-dashboard/home">
+          <NavigationItem component={Link} to="/cus-dashboard">
             <ListItemIcon>{/* Home Icon */}</ListItemIcon>
             <ListItemText primary="Home" />
           </NavigationItem>
@@ -56,7 +56,7 @@ const CusDashboardPage = () => {
       <ContentContainer>
       <Outlet />
       <Routes>
-        <Route path="/home" element={(<CusHomePage />)} />
+        <Route path="" element={(<CusHomePage />)} />
         <Route path="/history" element={(<CusHistoryPage/>)} />
         <Route path="/profile" element={(<CusProfilePage />)} />
       </Routes>
