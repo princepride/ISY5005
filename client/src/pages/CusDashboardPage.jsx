@@ -15,7 +15,7 @@ const MainContainer = styled(Box)`
 const NavigationContainer = styled(Box)`
   background-color: #333;
   color: #fff;
-  width: 20%;
+  width: 15%;
   height: 100%;
 `;
 
@@ -32,7 +32,7 @@ const NavigationItem = styled(ListItem)`
 
 const ContentContainer = styled(Box)`
   flex-grow: 1;
-  padding: 2rem;
+  padding: 1rem;
 `;
 
 const CusDashboardPage = () => {

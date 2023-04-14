@@ -8,13 +8,13 @@ export const ContextProvider = ({ children }) => {
     const [userName, setUserName] = useState('');
     const [userEmail, setUserEmail] = useState('');
     const [userType, setUserType] = useState(config_data.default_user_type);
-    const [dialogVisible, setDialogVisible] = useState(false);
+    const [formJson, setFormJson] = useState('');
 
     return (
         <StateContext.Provider value={{ isLogin, 
         setLogin, userName, setUserName, 
-        userType, setUserType, dialogVisible,
-         setDialogVisible, userEmail, setUserEmail }}>
+        userType, setUserType, userEmail,
+        setUserEmail, formJson, setFormJson }}>
             {children}
         </StateContext.Provider>
     );

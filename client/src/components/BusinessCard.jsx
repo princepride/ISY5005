@@ -3,10 +3,12 @@ import { CardActionArea, CardActions, Card, CardContent, CardMedia, Typography, 
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import ShareIcon from '@mui/icons-material/Share';
 import { useNavigate } from 'react-router-dom';
+import { useStateContext } from '../contexts/ContextProvider';
 
 const BusinessCard = (props) => {
-  const { label, companyName, address, image, information } = props;
+  const { label, companyName, address, image, information,formJson } = props;
   const navigate = useNavigate();
+  const { setFormJson } = useStateContext();
 
   const getColor = (label) => {
       if (label === 'sex') {
@@ -31,41 +33,44 @@ const BusinessCard = (props) => {
   }
 
   const handleClick = () => {
+    setFormJson(formJson);
     navigate('/cus-dashboard/form');
   }
   return (
-    <Card sx={{ maxWidth: 345 }}>
-      <CardHeader
-        avatar={
-          <Avatar sx={{ bgcolor: getColor(label) }} aria-label={label}>
-            {label.slice(0,1).toUpperCase()}
-          </Avatar>
-        }
-        title={<Typography align="left">{companyName}</Typography>}
-        subheader={<Typography align="left">{address}</Typography>}
-      />
-      <CardActionArea onClick={handleClick}>
-        <CardMedia
-          component="img"
-          height="140"
-          image={image}
-          alt="美女图"
+    <div className="m-2">
+      <Card sx={{ maxWidth: 300 }}>
+        <CardHeader
+          avatar={
+            <Avatar sx={{ bgcolor: getColor(label) }} aria-label={label}>
+              {label.slice(0,1).toUpperCase()}
+            </Avatar>
+          }
+          title={<Typography align="left">{companyName}</Typography>}
+          subheader={<Typography align="left">{address}</Typography>}
         />
-        <CardContent>
-          <Typography variant="body2" color="text.secondary">
-            {information}
-          </Typography>
-        </CardContent>
-      </CardActionArea>
-      <CardActions>
-      <IconButton aria-label="add to favorites">
-          <FavoriteIcon />
-        </IconButton>
-        <IconButton aria-label="share">
-          <ShareIcon />
-        </IconButton>
-      </CardActions>
-    </Card>
+        <CardActionArea onClick={handleClick}>
+          <CardMedia
+            component="img"
+            height="140"
+            image={image}
+            alt="美女图"
+          />
+          <CardContent>
+            <Typography variant="body2" color="text.secondary">
+              {information}
+            </Typography>
+          </CardContent>
+        </CardActionArea>
+        <CardActions>
+        <IconButton aria-label="add to favorites">
+            <FavoriteIcon />
+          </IconButton>
+          <IconButton aria-label="share">
+            <ShareIcon />
+          </IconButton>
+        </CardActions>
+      </Card>
+    </div>
   );
 }
 
