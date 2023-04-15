@@ -1,5 +1,6 @@
 export {default as config_axios} from "./data/config_axios.json"
 export {default as config_data} from "./data/config_data.json"
+export {default as dummy} from "./data/dummy.json"
 
 export {default as ico} from "./icos/ico.png"
 

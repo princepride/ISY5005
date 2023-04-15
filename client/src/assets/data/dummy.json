@@ -1,0 +1,18 @@
+{
+    "businessCardData": [
+        {
+            "label": "sex",
+            "companyName": "",
+            "address": "",
+            "image":"",
+            "information":"",
+            "formJson":""
+        }
+    ],
+    "imageButtonData": [
+        {
+            "image":"",
+            "title":""
+        }
+    ]
+}
