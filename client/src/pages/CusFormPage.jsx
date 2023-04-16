@@ -1,7 +1,7 @@
 import CreateForm from '../components/CreateForm'
 import Chat from '../components/Chat'
 import React from 'react'
-import test from '../pages/test.json'
+import {form} from '../assets'
 import styled from "@emotion/styled";
 
 function CusFormPage() {
@@ -18,7 +18,7 @@ function CusFormPage() {
   return (
     <div>
         <Container>
-        <CreateForm jsonData={test}/>
+        <CreateForm jsonData={form}/>
         </Container>
         <Chat />
     </div>

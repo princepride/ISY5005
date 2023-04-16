@@ -4,7 +4,7 @@ import {login, register, update_email, update_password} from '../utils/connectSQ
 import CreateForm from '../components/CreateForm'
 import ImageButton from '../components/ImageButton'
 import BusinessCard from '../components/BusinessCard'
-import test from './test.json'
+import {form} from '../assets'
 import image from '../assets/images/img1.jpg'
 
 export default function TestPage() {
