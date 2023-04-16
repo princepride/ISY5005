@@ -1,6 +1,6 @@
 import styled from "@emotion/styled";
 import { Typography } from '@mui/material';
-import { img1, img2, img3, img4, img5, img6, form } from "../assets";
+import { img1, img2, img3, img4, img5, img6, night_club, massage, ktv, restaurant, bar, haircut, form } from "../assets";
 import BusinessCard from '../components/BusinessCard';
 import ImageButton from '../components/ImageButton';
 import {ico} from '../assets';
@@ -51,6 +51,13 @@ function CusHomePage() {
   imageMap.img4 = img4;
   imageMap.img5 = img5;
   imageMap.img6 = img6;
+  imageMap.night_club = night_club;
+  imageMap.massage = massage;
+  imageMap.ktv = ktv;
+  imageMap.restaurant = restaurant;
+  imageMap.bar = bar;
+  imageMap.haircut = haircut;
+
   return (
     <HomePageContainer>
         <Header>
@@ -64,78 +71,16 @@ function CusHomePage() {
           Your favourite
         </Typography>
       <YourFavourite>
-      <BusinessCard 
-          label={dummy.businessCardData[0].label} 
-          companyName={dummy.businessCardData[0].companyName} 
-          address={dummy.businessCardData[0].address} 
-          image={imageMap[dummy.businessCardData[0].image]} 
-          information={dummy.businessCardData[0].information}
-          formJson = {dummy.businessCardData[0].formJson}
-        />
-        <BusinessCard 
-          label={"sex"} 
-          companyName={"哥哥快操我"} 
-          address={"190 Changi Rd, #01-01A"} 
-          image={img1} 
-          information={"新加坡最棒的妓院"}
-          formJson = {form}
-        />
-        <BusinessCard 
-          label={"sex"} 
-          companyName={"哥哥快操我"} 
-          address={"190 Changi Rd, #01-01A"} 
-          image={img2} 
-          information={"新加坡最棒的妓院"}
-          formJson = {form}
-        />
-        <BusinessCard 
-          label={"sex"} 
-          companyName={"哥哥快操我"} 
-          address={"190 Changi Rd, #01-01A"} 
-          image={img3} 
-          information={"新加坡最棒的妓院"}
-          formJson = {form}
-        />
-        <BusinessCard 
-          label={"sex"} 
-          companyName={"哥哥快操我"} 
-          address={"190 Changi Rd, #01-01A"} 
-          image={img4} 
-          information={"新加坡最棒的妓院"}
-          formJson = {form}
-        />
-        <BusinessCard 
-          label={"sex"} 
-          companyName={"哥哥快操我"} 
-          address={"190 Changi Rd, #01-01A"} 
-          image={img5} 
-          information={"新加坡最棒的妓院"}
-          formJson = {form}
-        />
-        <BusinessCard 
-          label={"sex"} 
-          companyName={"哥哥快操我"} 
-          address={"190 Changi Rd, #01-01A"} 
-          image={img6} 
-          information={"新加坡最棒的妓院"}
-          formJson = {form}
-        />
-        <BusinessCard 
-          label={"sex"} 
-          companyName={"哥哥快操我"} 
-          address={"190 Changi Rd, #01-01A"} 
-          image={img5} 
-          information={"新加坡最棒的妓院"}
-          formJson = {form}
-        />
-        <BusinessCard 
-          label={"sex"} 
-          companyName={"哥哥快操我"} 
-          address={"190 Changi Rd, #01-01A"} 
-          image={img2} 
-          information={"新加坡最棒的妓院"}
-          formJson = {form}
-        />
+        {dummy.businessCardData.map((item) => (
+          <BusinessCard 
+              label={item.label} 
+              companyName={item.companyName} 
+              address={item.address} 
+              image={imageMap[item.image]} 
+              information={item.information}
+              formJson = {form}
+            />
+        ))}
       </YourFavourite>
       </Container>
       <Container>
@@ -143,12 +88,13 @@ function CusHomePage() {
           Category
         </Typography>
       <CategoryContainer>
-      <ImageButton image={img1} title="hello" />
-      <ImageButton image={img1} title="hello" />
-      <ImageButton image={img1} title="hello" />
-      <ImageButton image={img1} title="hello" />
-      <ImageButton image={img1} title="hello" />
-      <ImageButton image={img1} title="hello" />
+      {dummy.imageButtonData.map((item) => (<ImageButton image={imageMap[item.image]} title={item.title} />))}
+      {/* <ImageButton image="night_bar.jpg" title="night bar" />
+      <ImageButton image="massage.jpg" title="massage" />
+      <ImageButton image="ktv.jpg" title="ktv" />
+      <ImageButton image="restaurant.jpg" title="restaurant" />
+      <ImageButton image="bar.jpg" title="bar" />
+      <ImageButton image="haircut.jpg" title="haircut" /> */}
     </CategoryContainer>
     </Container>
     </HomePageContainer>

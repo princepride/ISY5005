@@ -1,39 +1,78 @@
 {
     "businessCardData": [
         {
-            "label": "sex",
-            "companyName": "哥哥快操我",
-            "address": "190 Changi Rd, #01-01A",
+            "label": "nigth club",
+            "companyName": "Club 20",
+            "address": "20 Lor 18 Geylang",
             "image":"img1",
-            "information":"新加坡最棒的妓院",
+            "information":"night club",
             "formJson":"../assets/styles/form.json"
         },
         {
+            "label": "massage",
+            "companyName": "Sense Spa",
+            "address": "133 Jalan Bukit Merah",
+            "image":"img2",
+            "information":"spa and massage",
+            "formJson":"../assets/styles/form.json"
+        },
+        {
+            "label": "ktv",
+            "companyName": "Teo Heng KTV Studio",
+            "address": "1 Vista Exchange Green",
+            "image":"img3",
+            "information":"all ages ktv",
+            "formJson":"../assets/styles/form.json"
+        },
+        {
+            "label": "restaurant",
+            "companyName": "Eat At My Kitchen",
+            "address": "8D Dempsey Rd",
+            "image":"img4",
+            "information":"western restaurant",
+            "formJson":"../assets/styles/form.json"
+        },
+        {
+            "label": "bar",
+            "companyName": "Bar @ Lorong 13",
+            "address": "1A Lor 13 Geylang",
+            "image":"img5",
+            "information":"best deal bar",
+            "formJson":"../assets/styles/form.json"
+        },
+        {
+            "label": "haircut",
+            "companyName": "The Panic Room",
+            "address": "311A Geylang Rd",
+            "image":"img6",
+            "information":"personalized hairstyle provided",
+            "formJson":"../assets/styles/form.json"
         }
+        
     ],
     "imageButtonData": [
         {
-            "image":"",
-            "title":"sex"
+            "image":"night_club",
+            "title":"night club"
         },
         {
-            "image":"",
+            "image":"massage",
             "title":"massage"
         },
         {
-            "image":"",
+            "image":"ktv",
             "title":"ktv"
         },
         {
-            "image":"",
+            "image":"restaurant",
             "title":"restaurant"
         },
         {
-            "image":"",
+            "image":"bar",
             "title":"bar"
         },
         {
-            "image":"",
+            "image":"haircut",
             "title":"haircut"
         }
     ]
