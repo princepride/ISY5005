@@ -4,9 +4,9 @@
             "label": "sex",
             "companyName": "哥哥快操我",
             "address": "190 Changi Rd, #01-01A",
-            "image":"../images/img1.jpg",
+            "image":"img1",
             "information":"新加坡最棒的妓院",
-            "formJson":"../styles/form.json"
+            "formJson":"../assets/styles/form.json"
         },
         {
         }

@@ -4,6 +4,7 @@ import { img1, img2, img3, img4, img5, img6, form } from "../assets";
 import BusinessCard from '../components/BusinessCard';
 import ImageButton from '../components/ImageButton';
 import {ico} from '../assets';
+import dummy from "../assets/data/dummy";
 
 const HomePageContainer = styled.div`
   height: 100vh;
@@ -20,24 +21,13 @@ const Logo = styled.img`
   height: 30px;
 `;
 
-const CardContainer = styled.div`
+const Container = styled.div`
   border-radius: 8px;
   border: 1px solid #888;
   background-color: #ddd;
   overflow: hidden;
   margin: 20px;
   transition: border-color 0.3s ease-in-out;
-
-`;
-
-const Container = styled.div`
-  margin: 0 auto;
-  height: 100vh;
-  overflow-y: scroll;
-  padding: 16px;
-  border-radius: 16px;
-  background-color: #fff;
-  box-shadow: 0 0 16px rgba(0, 0, 0, 0.2);
 `;
 
 const YourFavourite = styled.div`
@@ -54,6 +44,13 @@ const CategoryContainer = styled.div`
 `;
 
 function CusHomePage() {
+  const imageMap = {};
+  imageMap.img1 = img1;
+  imageMap.img2 = img2;
+  imageMap.img3 = img3;
+  imageMap.img4 = img4;
+  imageMap.img5 = img5;
+  imageMap.img6 = img6;
   return (
     <HomePageContainer>
         <Header>
@@ -62,11 +59,19 @@ function CusHomePage() {
             Company Name
           </Typography>
         </Header>
-        <CardContainer>
+        <Container>
         <Typography variant="h4" color="text.secondary" className="text-left" style={{ marginLeft: '10px', marginTop: '20px' }}>
           Your favourite
         </Typography>
       <YourFavourite>
+      <BusinessCard 
+          label={dummy.businessCardData[0].label} 
+          companyName={dummy.businessCardData[0].companyName} 
+          address={dummy.businessCardData[0].address} 
+          image={imageMap[dummy.businessCardData[0].image]} 
+          information={dummy.businessCardData[0].information}
+          formJson = {dummy.businessCardData[0].formJson}
+        />
         <BusinessCard 
           label={"sex"} 
           companyName={"哥哥快操我"} 
@@ -132,8 +137,8 @@ function CusHomePage() {
           formJson = {form}
         />
       </YourFavourite>
-      </CardContainer>
-      <CardContainer>
+      </Container>
+      <Container>
       <Typography variant="h4" color="text.secondary" className="text-left" style={{ marginLeft: '10px', marginTop: '20px' }}>
           Category
         </Typography>
@@ -145,7 +150,7 @@ function CusHomePage() {
       <ImageButton image={img1} title="hello" />
       <ImageButton image={img1} title="hello" />
     </CategoryContainer>
-    </CardContainer>
+    </Container>
     </HomePageContainer>
   );
 }

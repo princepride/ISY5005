@@ -92,7 +92,7 @@ const ImageButton = (props) => {
             pb: (theme) => `calc(${theme.spacing(1)} + 6px)`,
           }}
         >
-          title
+          {title}
           <ImageMarked className="MuiImageMarked-root" />
         </Typography>
       </Image>
