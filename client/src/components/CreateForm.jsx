@@ -209,7 +209,7 @@ const CreateForm = ({ jsonData }) => {
         return renderDateInput(property);
         case "time":
         return renderTimeInput(property);
-        case "date-time":
+        case "dateTime":
         return renderDateTimeInput(property);
         case "dropdownList":
         return renderDropdownList(property);
@@ -219,7 +219,7 @@ const CreateForm = ({ jsonData }) => {
         return renderRadioButtons(property);
         case "checkBoxes":
         return renderCheckBoxes(property);
-        case "buttons":
+        case "button":
         return renderButton(property);
         default:
         return null;

@@ -24,7 +24,7 @@
             "title": "Begin Date"
         },
         "Time": {
-            "type": "date-time",
+            "type": "dateTime",
             "title": "Time"
         },
         "peopleNumber": {
@@ -62,7 +62,7 @@
             }
         },
         "button": {
-            "type": "buttons",
+            "type": "button",
             "title": "button"
         }
     }
