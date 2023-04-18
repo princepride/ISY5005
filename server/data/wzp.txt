@@ -1,0 +1,20 @@
+{input:{table:[name, age, email], question: What is the age of the person named John?}, output: True}
+{input:{table:[book_name, author, published_date], question: Who is the author of the book "To Kill a Mockingbird"?}, output: True}
+{input:{table:[product_name, price, quantity], question: What is the price of the product with ID "12345"?}, output: True}
+{input:{table:[customer_name, address, phone], question: What is the phone number of the customer with name "Mary Johnson"?}, output: True}
+{input:{table:[employee_name, department, salary], question: What is the department of the employee with ID "789"?}, output: True}
+{input:{table:[city_name, population, area], question: What is the area of the city with population 5 million?}, output: False}
+{input:{table:[product_name, price, quantity], question: What is the quantity of the product with name "Bananas"?}, output: True}
+{input:{table:[book_title, author, rating], question: What is the rating of the book "Pride and Prejudice"?}, output: True}
+{input:{table:[song_title, artist, length], question: Who is the artist of the song "Thriller"?}, output: True}
+{input:{table:[movie_title, director, rating], question: What is the rating of the movie "The Shawshank Redemption"?}, output: True}
+{input:{table:[product_name, price, quantity], question: What is the total quantity of all products?}, output: True}
+{input:{table:[customer_name, address, phone], question: Who has the phone number "555-1234"?}, output: False}
+{input:{table:[employee_name, department, salary], question: What is the highest salary in the company?}, output: True}
+{input:{table:[city_name, population, area], question: What is the average population of all cities?}, output: True}
+{input:{table:[product_name, price, quantity], question: How many products have a price over $100?}, output: False}
+{input:{table:[book_title, author, rating], question: What is the lowest rated book?}, output: True}
+{input:{table:[song_title, artist, length], question: What is the longest song?}, output: True}
+{input:{table:[movie_title, director, rating], question: Who directed the movie "The Godfather"?}, output: True}
+{input:{table:[book_title, author, genre], question: How many books are in the "Mystery" genre?}, output: True}
+{input:{table:[product_name, price, quantity], question: What is the average quantity per product?}, output: True}
