@@ -123,6 +123,7 @@ def update_password():
         # Return success message
         return jsonify({'status':'100','message':'update password success', 'userName':data[0][0], 'userEmail':data[0][1]})
 
+# chat robot
 @app.route("/api/send_message",methods = ["POST"])
 def send_message():
     req = request.get_json(silent=False, force=True)
