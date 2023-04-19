@@ -1,0 +1,20 @@
+{input:{table:[name,age,gender,city],question:What is the age of people who live in New York?},output:False}
+{input:{table:[name,age,gender,city],question:What is the gender of people who live in New York?},output:True}
+{input:{table:[name,age,gender,city],question:What is the name of the oldest person in the table?},output:True}
+{input:{table:[name,age,gender,city],question:How many people live in New York?},output:True}
+{input:{table:[product,name,price],question:What is the name of the most expensive product?},output:True}
+{input:{table:[product,name,price],question:What is the price of the cheapest product?},output:True}
+{input:{table:[product,name,price],question:What is the name of the product with the highest price?},output:True}
+{input:{table:[product,name,price],question:What is the average price of all products?},output:True}
+{input:{table:[book,title,author,publisher],question:What is the title of the book published by Penguin?},output:True}
+{input:{table:[book,title,author,publisher],question:Who is the author of the book "To Kill a Mockingbird"?},output:True}
+{input:{table:[book,title,author,publisher],question:What is the publisher of the book "The Hunger Games"?},output:True}
+{input:{table:[book,title,author,publisher],question:What is the title of the book written by Stephen King?},output:False}
+{input:{table:[order,product,customer,date],question:What is the product in the latest order?},output:True}
+{input:{table:[order,product,customer,date],question:What is the customer who placed the first order?},output:True}
+{input:{table:[order,product,customer,date],question:What is the product that has the most orders?},output:True}
+{input:{table:[order,product,customer,date],question:What is the average number of orders per customer?},output:False}
+{input:{table:[employee,name,age,salary],question:What is the name of the employee with the highest salary?},output:True}
+{input:{table:[employee,name,age,salary],question:What is the average age of all employees?},output:True}
+{input:{table:[employee,name,age,salary],question:What is the salary of the youngest employee?},output:True}
+{input:{table:[customer,name,email,phone,address],question:What is the phone number of the customer with the email "example@email.com"?},output:True}

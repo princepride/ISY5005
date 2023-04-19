@@ -15,7 +15,7 @@ def check_sql(input_text):
     outputs = model(**inputs)
     # print(outputs)
     predictions = torch.softmax(outputs.logits, dim=1).detach().numpy()[0]
-    # print(predictions)
+    print(predictions)
     is_sql_query = bool(predictions[1] > 0.5)
     print(is_sql_query)
     
@@ -23,4 +23,4 @@ def check_sql(input_text):
 
 
 
-# print(check_sql('get people name with age equal 25'))
+print(check_sql('Hello I want to book a room, can you suggest me where I can get'))

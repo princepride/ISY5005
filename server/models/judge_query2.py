@@ -6,7 +6,7 @@ classifier = pipeline("zero-shot-classification",
                       model="facebook/bart-large-mnli")
 
 
-# sequence_to_classify = "get people name with age equal 25"
+sequence_to_classify = "What is the gender of people who live in New York?"
 
 def check_sql(sequence_to_classify):
     candidate_labels = ['data query']
@@ -18,4 +18,4 @@ def check_sql(sequence_to_classify):
         return True
     else:
         return False
-# print(is_query(sequence_to_classify))
+# print(check_sql('Hello I want to book a room, can you suggest me where I can get'))

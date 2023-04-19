@@ -15,3 +15,4 @@ def inference(question: str, table: List[str]) -> str:
     outputs = model.generate(inputs=input_data, num_beams=10, top_k=10, max_length=700)
     result = tokenizer.decode(token_ids=outputs[0], skip_special_tokens=True)
     return result
+# print(inference("what's the room size of Tom's booking",["name","id","roomSize"]))
