@@ -13,8 +13,8 @@ def check_sql(sequence_to_classify):
     response=classifier(sequence_to_classify, candidate_labels)
     # print(response)
     dataQueryIndex=response["labels"].index("data query")
-    # print(response["scores"][dataQueryIndex])
-    if response["scores"][dataQueryIndex]>0.9:
+    print(response["scores"][dataQueryIndex])
+    if response["scores"][dataQueryIndex]>0.6:
         return True
     else:
         return False

@@ -19,7 +19,7 @@ def add_quotes(query):
     return query
 
 
-directory='e:/nus is coures/intelligent software agents 5005/5005project/ISY5005-main/ISY5005/server/database/booking.db'
+directory = 'd:/ISS/Intelligent Systems/Intelligent Software Agents/project/project/ISY5005/server/database/booking.db'
 
 def query_run_fun(message2):
     # adjust query word
@@ -59,10 +59,19 @@ def answer_type(answer):
         elif answer=="Data has inserted":
             return "Book successfully"
         elif isinstance(answer, dict):
-            return "Variable listed:{},values: {}".format(answer["headers"],answer["results"])
-sql_request = 'SELECT * FROM booking_123 WHERE name = "Jerry"'
-sql_insert='INSERT INTO booking_123 (name, phone_number, room_size, begin_time, note) VALUES ("Jerry3","83456789","large","03232023","000")'
-sql_format='SELECT * FROM booking_123 WHERE name = Jerry2'
+            print(answer["headers"],answer["results"])
+            # return "Variable listed:{},values: {}".format(answer["headers"],answer["results"])
+            if answer['headers'] and answer['results']:
+                hea = answer['headers'][0].replace('_', ' ')
+                res = answer['results'][0][0]
+                return f"{hea} is {res}"
+            else:
+                return "No results found."
+
+# sql_request = 'SELECT * FROM booking_123 WHERE name = "Jerry"'
+# sql_insert='INSERT INTO booking_123 (name, phone_number, room_size, begin_time, note) VALUES ("Jerry8","83456789","large","03232023","000")'
+# query_run_fun(sql_insert)
+# sql_format='SELECT * FROM booking_123 WHERE name = Jerry2'
 # print(add_quotes(sql_format))
 # example=query_run_fun(sql_format)
 # print(example)

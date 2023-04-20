@@ -43,6 +43,8 @@ const ChatInputField = styled(TextField)({
   flex: 1,
 });
 
+
+
 const ChatSendButton = styled(Button)({
   marginLeft: 8,
 });
@@ -58,6 +60,7 @@ const Chat = () => {
   };
 
   const handleSendMessage = () => {
+    
     if (newMessage.trim() !== '') {
       setMessages((prevMessages) => [
         ...prevMessages,
@@ -76,6 +79,7 @@ const Chat = () => {
         });
     }
   };
+
 
   useEffect(() => {
     if (chatHistoryRef.current) {

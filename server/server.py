@@ -128,7 +128,11 @@ def update_password():
 def send_message():
     req = request.get_json(silent=False, force=True)
     message = req["message"]
-    return jsonify({'status':'100','message':bot.respond(message)})
+    if message.lower() == "hello":
+        response = bot.welcome_message
+    else:
+        response = bot.respond(message)
+    return jsonify({'status':'100','message':response})
     
 
 if __name__ == '__main__':
