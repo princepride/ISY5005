@@ -19,7 +19,7 @@ def add_quotes(query):
     return query
 
 
-directory = 'd:/ISS/Intelligent Systems/Intelligent Software Agents/project/project/ISY5005/server/database/booking.db'
+directory = './database/booking.db'
 
 def query_run_fun(message2):
     # adjust query word
