@@ -19,7 +19,7 @@ function CusFormPage() {
   return (
     <div>
         <Container>
-        <CreateForm jsonData={form}/>
+        <CreateForm jsonData={form2}/>
         </Container>
         <Chat />
     </div>

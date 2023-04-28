@@ -20,7 +20,7 @@ const NavigationContainer = styled(Box)`
   background-repeat: no-repeat;
   background-position: center;
   color: #fff;
-  width: 16%;
+  width: 28%;
   height: 100%;
 `;
 
