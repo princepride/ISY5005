@@ -2,6 +2,7 @@ import CreateForm from '../components/CreateForm'
 import Chat from '../components/Chat'
 import React from 'react'
 import {form} from '../assets'
+import form2 from '../assets/styles/form2.json'
 import styled from "@emotion/styled";
 
 function CusFormPage() {

@@ -9,19 +9,23 @@
         "name": {
             "type": "textInput",
             "title": "Name",
-            "default": "Tom"
+            "default": "Hello"
         },
         "phoneNumber": {
             "type": "textInput",
             "title": "Phone Number"
         },
-        "Time": {
+        "beginTime": {
             "type": "time",
             "title": "Begin Time"
         },
-        "Date": {
+        "beginDate": {
             "type": "date",
             "title": "Begin Date"
+        },
+        "Time": {
+            "type": "dateTime",
+            "title": "Time"
         },
         "peopleNumber": {
             "type": "dropdownList",
@@ -36,6 +40,26 @@
         "note": {
             "type": "textarea",
             "title": "Note"
+        },
+        "radioButton": {
+            "type": "radiButtons",
+            "title": "radioButton",
+            "items": {
+                "type": "string",
+                "enumTitle": [
+                "1","2","3","4","5","6","7","8"
+                ]
+            }
+        },
+        "checkbox": {
+            "type": "checkBoxes",
+            "title": "checkbox",
+            "items": {
+                "type": "string",
+                "enumTitle": [
+                "1","2","3","4","5","6","7","8"
+                ]
+            }
         },
         "button": {
             "type": "button",

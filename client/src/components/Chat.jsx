@@ -94,7 +94,8 @@ const Chat = () => {
         color="primary"
         onClick={handleToggleChat}
       >
-        Chat
+        {!open && "Chat"}
+        {open && "Close"}
       </ChatButton>
       {open && (
         <ChatBox elevation={3}>

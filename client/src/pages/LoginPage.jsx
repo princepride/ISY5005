@@ -5,6 +5,8 @@ import config_data from '../assets/data/config_data.json';
 import customer from "../assets/videos/customer.mp4";
 import enterprise from "../assets/videos/enterprise.mp4";
 import {login, register} from '../utils/connectSQLite';
+import customerImage from "../assets/images/customer.jpg";
+import businessImage from "../assets/images/business.jpg"
 import './LoginPage.sass';
 
 function LoginPage() {
@@ -79,7 +81,7 @@ function LoginPage() {
   return (
     <section className="user">
       <div className=" relative w-full h-full">
-        <video
+        {/*<video
           src={userType === 'Customer' ? customer : enterprise}
           type="video/mp4"
           loop
@@ -87,7 +89,8 @@ function LoginPage() {
           muted
           autoPlay
           className="w-full h-full object-cover"
-        />
+        />*/}
+        <img src = {businessImage} className="w-full h-full object-cover"/>
       </div>
       <div className="user_options-container">
         <div className="user_options-text">

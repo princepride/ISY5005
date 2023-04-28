@@ -6,6 +6,7 @@ import CusHomePage from './CusHomePage';
 import CusHistoryPage from './CusHistoryPage';
 import CusProfilePage from './CusProfilePage';
 import CusFormPage from './CusFormPage';
+import sidebar from '../assets/images/sidebar.png'
 
 const MainContainer = styled(Box)`
   display: flex;
@@ -14,8 +15,12 @@ const MainContainer = styled(Box)`
 
 const NavigationContainer = styled(Box)`
   background-color: #333;
+  background-image: url(${sidebar});
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
   color: #fff;
-  width: 15%;
+  width: 16%;
   height: 100%;
 `;
 
@@ -38,22 +43,23 @@ const ContentContainer = styled(Box)`
 const CusDashboardPage = () => {
   return (
     <MainContainer>
-      <NavigationContainer>
+      {/*<NavigationContainer>
         <NavigationList>
           <NavigationItem component={Link} to="/cus-dashboard">
-            <ListItemIcon>{/* Home Icon */}</ListItemIcon>
+            <ListItemIcon></ListItemIcon>
             <ListItemText primary="Home" />
           </NavigationItem>
           <NavigationItem component={Link} to="/cus-dashboard/history">
-            <ListItemIcon>{/* History Icon */}</ListItemIcon>
+            <ListItemIcon></ListItemIcon>
             <ListItemText primary="History" />
           </NavigationItem>
           <NavigationItem component={Link} to="/cus-dashboard/profile">
-            <ListItemIcon>{/* Profile Icon */}</ListItemIcon>
+            <ListItemIcon></ListItemIcon>
             <ListItemText primary="Profile" />
           </NavigationItem>
         </NavigationList>
-      </NavigationContainer>
+      </NavigationContainer>*/}
+      <NavigationContainer />
       <ContentContainer>
       <Outlet />
       <Routes>
